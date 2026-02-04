@@ -1,0 +1,622 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AkshatAgarwal456/100-Days-of-code/blob/main/python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Za8-Nr5k11fh"
+      },
+      "source": [
+        "##### Copyright 2018 The TensorFlow Authors."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "cellView": "form",
+        "id": "Eq10uEbw0E4l"
+      },
+      "outputs": [],
+      "source": [
+        "#@title Licensed under the Apache License, Version 2.0 (the \"License\");\n",
+        "# you may not use this file except in compliance with the License.\n",
+        "# You may obtain a copy of the License at\n",
+        "#\n",
+        "# https://www.apache.org/licenses/LICENSE-2.0\n",
+        "#\n",
+        "# Unless required by applicable law or agreed to in writing, software\n",
+        "# distributed under the License is distributed on an \"AS IS\" BASIS,\n",
+        "# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n",
+        "# See the License for the specific language governing permissions and\n",
+        "# limitations under the License."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "YHI3vyhv5p85"
+      },
+      "source": [
+        "## **Introduction to Colab and Python**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OVi775ZJ2bsy"
+      },
+      "source": [
+        "<table class=\"tfo-notebook-buttons\" align=\"left\">\n",
+        "  <td>\n",
+        "    <a target=\"_blank\" href=\"https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l01c01_introduction_to_colab_and_python.ipynb\"><img src=\"https://www.tensorflow.org/images/colab_logo_32px.png\" />Run in Google Colab</a>\n",
+        "  </td>\n",
+        "  <td>\n",
+        "    <a target=\"_blank\" href=\"https://github.com/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l01c01_introduction_to_colab_and_python.ipynb\"><img src=\"https://www.tensorflow.org/images/GitHub-Mark-32px.png\" />View source on GitHub</a>\n",
+        "  </td>\n",
+        "</table>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "F8YVA_634OFk"
+      },
+      "source": [
+        "Welcome to this Colab where you will get a quick introduction to the Python programming language and the environment used for the course's exercises: Colab.\n",
+        "\n",
+        "Colab is a Python development environment that runs in the browser using Google Cloud.\n",
+        "\n",
+        "For example, to print \"Hello World\", just hover the mouse over [ ] and press the play button to the upper left. Or press shift-enter to execute."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "X9uIpOS2zx7k",
+        "outputId": "64fc2053-a700-4d61-ee70-48a4899edd83",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 50\n",
+            "Factorial = 30414093201713378043612608166064768844377641568960512000000000000\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to find factorial of a number\n",
+        "\n",
+        "n = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "fact = 1\n",
+        "\n",
+        "for i in range(1, n + 1):\n",
+        "    fact = fact * i\n",
+        "\n",
+        "print(\"Factorial =\", fact)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wwJGmDrQ0EoB"
+      },
+      "source": [
+        "## Functions, Conditionals, and Iteration\n",
+        "Let's create a Python function, and call it from a loop."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "pRllo2HLfXiu",
+        "outputId": "014cc1e6-d6b0-4259-b153-1f0d10edf51b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 98\n",
+            "Not an Armstrong Number\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to check Armstrong number\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "temp = num\n",
+        "sum = 0\n",
+        "digits = len(str(num))\n",
+        "\n",
+        "while temp > 0:\n",
+        "    rem = temp % 10\n",
+        "    sum = sum + (rem ** digits)\n",
+        "    temp = temp // 10\n",
+        "\n",
+        "if sum == num:\n",
+        "    print(\"Armstrong Number\")\n",
+        "else:\n",
+        "    print(\"Not an Armstrong Number\")\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "lHNmDCh0JpVP",
+        "outputId": "f7f665d3-8d70-4169-8292-d768be734b47",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of terms: 6\n",
+            "Fibonacci series:\n",
+            "0 1 1 2 3 5 "
+          ]
+        }
+      ],
+      "source": [
+        "# Program to print Fibonacci series up to n terms\n",
+        "\n",
+        "n = int(input(\"Enter number of terms: \"))\n",
+        "\n",
+        "a = 0\n",
+        "b = 1\n",
+        "\n",
+        "print(\"Fibonacci series:\")\n",
+        "\n",
+        "for i in range(n):\n",
+        "    print(a, end=\" \")\n",
+        "    c = a + b\n",
+        "    a = b\n",
+        "    b = c\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kiZG7uhm8qCF"
+      },
+      "source": [
+        "Easy, right?\n",
+        "\n",
+        "If you want a loop starting at 0 to 2 (exclusive) you could do any of the following"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "id": "m8YQN1H41L-Y",
+        "outputId": "9d569786-5ee6-4f1b-b01f-5d5dfffe9e34",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 54\n",
+            "Not a Prime Number\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to check prime number\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "if num <= 1:\n",
+        "    print(\"Not a Prime Number\")\n",
+        "else:\n",
+        "    for i in range(2, num):\n",
+        "        if num % i == 0:\n",
+        "            print(\"Not a Prime Number\")\n",
+        "            break\n",
+        "    else:\n",
+        "        print(\"Prime Number\")\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "vIgmFZq4zszl",
+        "outputId": "4f398b44-71a5-4410-fd66-b51e275c1cc0",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 43\n",
+            "Not a Palindrome Number\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to check palindrome number\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "temp = num\n",
+        "rev = 0\n",
+        "\n",
+        "while temp > 0:\n",
+        "    rem = temp % 10\n",
+        "    rev = rev * 10 + rem\n",
+        "    temp = temp // 10\n",
+        "\n",
+        "if rev == num:\n",
+        "    print(\"Palindrome Number\")\n",
+        "else:\n",
+        "    print(\"Not a Palindrome Number\")\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5QyOUhFw1OUX"
+      },
+      "source": [
+        "## Numpy and lists\n",
+        "Python has lists built into the language.\n",
+        "However, we will use a library called numpy for this.\n",
+        "Numpy gives you lots of support functions that are useful when doing Machine Learning.\n",
+        "\n",
+        "Here, you will also see an import statement. This statement makes the entire numpy package available and we can access those symbols using the abbreviated 'np' syntax."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "id": "4Dxk4q-jzEy4",
+        "outputId": "c83e321b-84b8-4dc3-fc6d-3a7f23ebbdb0",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 43\n",
+            "Sum of digits = 7\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to find sum of digits of a number\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "sum = 0\n",
+        "\n",
+        "while num > 0:\n",
+        "    rem = num % 10\n",
+        "    sum = sum + rem\n",
+        "    num = num // 10\n",
+        "\n",
+        "print(\"Sum of digits =\", sum)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "id": "RTa8_9G3LV03",
+        "outputId": "ad51939c-10f9-46c1-92e9-4b20db3cae78",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Numbers divisible by 5 or 7:\n",
+            "5 7 10 14 15 20 21 25 28 30 35 40 42 45 49 50 55 56 60 63 65 70 75 77 80 84 85 90 91 95 98 100 \n",
+            "Count = 32\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to print and count numbers divisible by 5 or 7\n",
+        "\n",
+        "count = 0\n",
+        "\n",
+        "print(\"Numbers divisible by 5 or 7:\")\n",
+        "\n",
+        "for i in range(1, 101):\n",
+        "    if i % 5 == 0 or i % 7 == 0:\n",
+        "        print(i, end=\" \")\n",
+        "        count += 1\n",
+        "\n",
+        "print(\"\\nCount =\", count)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "metadata": {
+        "id": "9YaGj5n4LW7P",
+        "outputId": "435b347a-8cf1-4a42-de84-4524e6cded86",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: akshat\n",
+            "Uppercase string: AKSHAT\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to convert lowercase letters to uppercase\n",
+        "\n",
+        "s = input(\"Enter a string: \")\n",
+        "\n",
+        "result = s.upper()\n",
+        "\n",
+        "print(\"Uppercase string:\", result)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "metadata": {
+        "id": "V6ilVhi9LXn_",
+        "outputId": "c39a6ec5-6693-4c07-96be-752213aa59f7",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 34\n",
+            "34 * 1 = 34\n",
+            "34 * 2 = 68\n",
+            "34 * 3 = 102\n",
+            "34 * 4 = 136\n",
+            "34 * 5 = 170\n",
+            "34 * 6 = 204\n",
+            "34 * 7 = 238\n",
+            "34 * 8 = 272\n",
+            "34 * 9 = 306\n",
+            "34 * 10 = 340\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to print multiplication table\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "for i in range(1, 11):\n",
+        "    print(num, \"*\", i, \"=\", num * i)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 11,
+      "metadata": {
+        "id": "W_Q-DkFCLYGA",
+        "outputId": "0b504f9c-6232-4702-9175-2e6feb0b78e2",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1234554321\n",
+            "1234 *  4321\n",
+            "123  * *   321\n",
+            "12   * * *    21\n",
+            "1    * * * *     1\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to print the given pattern\n",
+        "\n",
+        "n = 5\n",
+        "\n",
+        "for i in range(n):\n",
+        "    # Left numbers\n",
+        "    for j in range(1, n - i + 1):\n",
+        "        print(j, end=\"\")\n",
+        "\n",
+        "    # Spaces between numbers and stars\n",
+        "    print(\" \" * i, end=\"\")\n",
+        "\n",
+        "    # Stars\n",
+        "    if i > 0:\n",
+        "        print(\"* \" * i, end=\"\")\n",
+        "\n",
+        "    # Spaces after stars\n",
+        "    print(\" \" * i, end=\"\")\n",
+        "\n",
+        "    # Right numbers\n",
+        "    for j in range(n - i, 0, -1):\n",
+        "        print(j, end=\"\")\n",
+        "\n",
+        "    print()\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "c-Jk4dG91dvD"
+      },
+      "source": [
+        "## Colab Specifics"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "G0cGd8sHEmKi"
+      },
+      "source": [
+        "Colab is a virtual machine you can access directly. To run commands at the VM's terminal, prefix the line with an exclamation point (!).\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "metadata": {
+        "id": "cLkfhyzq0W2y",
+        "outputId": "b76c6587-0d65-41b6-f6c6-b6905fcddf83",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the value of n: 45\n",
+            "Sum of the series = 4.394948115551322\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Program to find sum of the series\n",
+        "\n",
+        "n = int(input(\"Enter the value of n: \"))\n",
+        "\n",
+        "sum = 0.0\n",
+        "\n",
+        "for i in range(1, n + 1):\n",
+        "    sum = sum + (1 / i)\n",
+        "\n",
+        "print(\"Sum of the series =\", sum)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "gR2WTN1cOZ1n"
+      },
+      "outputs": [],
+      "source": [
+        "print(\"Install numpy\")  # Just for test, numpy is actually preinstalled in all Colab instances\n",
+        "!pip install numpy"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "QuWRpQdatAIU"
+      },
+      "source": [
+        "**Exercise**\n",
+        "\n",
+        "Create a code cell underneath this text cell and add code to:\n",
+        "\n",
+        "\n",
+        "*   List the path of the current directory (pwd)\n",
+        "* Go to / (cd) and list the content (ls -l)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "xU-cJbMCR61P"
+      },
+      "outputs": [],
+      "source": [
+        "!pwd\n",
+        "!cd /\n",
+        "!ls -l\n",
+        "print(\"Hello\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7b5jv0ouFREV"
+      },
+      "source": [
+        "All usage of Colab in this course is completely free or charge. Even GPU usage is provided free of charge for some hours of usage every day.\n",
+        "\n",
+        "**Using GPUs**\n",
+        "* Many of the exercises in the course executes more quickly by using GPU runtime: Runtime | Change runtime type | Hardware accelerator | GPU\n",
+        "\n",
+        "**Some final words on Colab**\n",
+        "*   You execute each cell in order, you can edit & re-execute cells if you want\n",
+        "*   Sometimes, this could have unintended consequences. For example, if you add a dimension to an array and execute the cell multiple times, then the cells after may not work. If you encounter problem reset your environment:\n",
+        "  *   Runtime -> Restart runtime... Resets your Python shell\n",
+        "  *   Runtime -> Restart all runtimes... Will reset the Colab image, and get you back to a 100% clean environment\n",
+        "* You can also clear the output in the Colab by doing: Edit -> Clear all outputs\n",
+        "* Colabs in this course are loaded from GitHub. Save to your Google Drive if you want a copy with your code/output: File -> Save a copy in Drive...\n",
+        "\n",
+        "**Learn More**\n",
+        "*   Check out [this](https://www.youtube.com/watch?v=inN8seMm7UI&list=PLQY2H8rRoyvwLbzbnKJ59NkZvQAW9wLbx&index=3) episode of #CodingTensorFlow, and don't forget to subscribe to the YouTube channel ;)\n"
+      ]
+    }
+  ],
+  "metadata": {
+    "accelerator": "GPU",
+    "colab": {
+      "name": "l01c01_introduction_to_colab_and_python.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
